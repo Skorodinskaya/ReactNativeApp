@@ -1,15 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, StatusBar, StyleSheet, View} from 'react-native';
+import {FlatList, StyleSheet, View} from 'react-native';
 import {getUsers} from "../services/api.service";
 import User from "./User";
 
 const Users = () => {
-    const [users, setUsers] = useState([]);
+    const [users, setUsers] = useState();
     useEffect(() => {
         getUsers().then(value => setUsers([...value]))
     }, [])
     return <View style = {[styles.users]}>
-        <StatusBar style='auto'/>
         <FlatList
             data={users}
             renderItem={(item) => <User item={item}/>}
