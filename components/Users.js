@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {FlatList, StyleSheet} from 'react-native';
+import {View, Text, Button, TouchableOpacity} from 'react-native';
 import {getUsers} from "../services/api.service";
 import User from "./User";
 
@@ -8,19 +9,18 @@ const Users = () => {
     useEffect(() => {
         getUsers().then(value => setUsers([...value]))
     }, [])
-    return <View style = {[styles.users]}>
-        <FlatList
-            data={users}
-            renderItem={(item) => <User item={item}/>}
-            keyExtractor={item => '' + item.id}
-        />
+    return <View style={[styles.base]}>
+        <FlatList data={users}
+                  renderItem={({item}) => <User item={item}/>}
+                  keyExtractor={item => '' + item.id}/>
     </View>;
 };
 export default Users;
 
 let styles = StyleSheet.create({
-    users: {
+    base: {
         flex: 1,
         justifyContent: 'center',
+        alignItems: 'center'
     }
 });

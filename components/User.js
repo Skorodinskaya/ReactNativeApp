@@ -1,5 +1,6 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {View, Text, Button, TouchableOpacity} from 'react-native';
 
 const User = ({item}) => {
     return <View style = {[styles.block]}>
@@ -10,12 +11,14 @@ export default User;
 
 let styles = StyleSheet.create({
     block: {
+        width: 200,
+        height: 20,
         backgroundColor: 'pink',
         margin: 10,
     },
 
     text: {
-        color: 'purple',
         textAlign: 'center',
+        color: 'purple'
     }
 });
