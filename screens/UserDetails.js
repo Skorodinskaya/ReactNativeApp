@@ -2,11 +2,11 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 import {View, Text, Button, TouchableOpacity} from 'react-native';
 
-const UserDetails = () => {
+const UserDetails = ({route: {params: {data}}, navigation}) => {
     return <View>
-        <Text>UserDetails page</Text>
+        <Text>{data.name} - {data.email}</Text>
     </View>;
 };
 export default UserDetails;
 
-let styles = StyleSheet.create({});
+let styles = StyleSheet.create({ });
