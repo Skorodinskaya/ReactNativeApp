@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, StyleSheet} from 'react-native';
-import {View, Text, Button, TouchableOpacity} from 'react-native';
+import {FlatList, StyleSheet, View} from 'react-native';
 import {getComments} from "../../services/api.service";
 import Comment from "../comment/Comment";
 
