@@ -7,20 +7,19 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import UserPageNav from "./screens/users/UserPageNav";
 import PostDetailsNav from "./screens/posts/PostDetailsNav";
 import CommentDetailsNav from "./screens/comments/CommentDetailsNav";
+import Comments from "./components/comments/Comments";
 
 export default function App() {
-
-const BottomTabNavigator = createBottomTabNavigator()
+    const BottomTabNavigator = createBottomTabNavigator()
     return (
-        <NavigationContainer>
-            <BottomTabNavigator.Navigator>
-                <BottomTabNavigator.Screen name={'Home'} component={Home}/>
-                <BottomTabNavigator.Screen name={'Users'} component={UserPageNav}/>
-                <BottomTabNavigator.Screen name={'Posts'} component={PostDetailsNav}/>
-                <BottomTabNavigator.Screen name={'Comments'} component={CommentDetailsNav}/>
-            </BottomTabNavigator.Navigator>
+<NavigationContainer>
+    <BottomTabNavigator.Navigator>
+        <BottomTabNavigator.Screen name={'Users'} component={UserPageNav}/>
+        <BottomTabNavigator.Screen name={'Post'} component={PostDetailsNav}/>
+        <BottomTabNavigator.Screen name={'Comments'} component={CommentDetailsNav}/>
 
-        </NavigationContainer>
+    </BottomTabNavigator.Navigator>
+</NavigationContainer>
 
     )
 };

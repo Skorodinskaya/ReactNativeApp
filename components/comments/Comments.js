@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {FlatList, StyleSheet} from 'react-native';
+import {View, Text, Button, TouchableOpacity} from 'react-native';
 import {getComments} from "../../services/api.service";
 import Comment from "../comment/Comment";
 
@@ -8,21 +9,21 @@ const Comments = ({navigation}) => {
     useEffect(() => {
         getComments().then(value => setComments([...value]))
     }, [])
-    return <View style={styles.base}>
-        <FlatList
-            data={comments}
-            renderItem={({item}) => <Comment item={item} nav={navigation}/>
-            }
-            keyExtractor={item => '' + item.id}
-        />
-    </View>;
+    return (
+        <View style={styles.base}>
+            <FlatList
+                data={comments}
+                renderItem={({item}) => <Comment item={item} nav={navigation}/>}
+                keyExtractor={item => '' + item.id}/>
+        </View>
+    )
 };
 export default Comments;
 
 let styles = StyleSheet.create({
     base: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 });

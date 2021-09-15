@@ -6,7 +6,7 @@ import Comments from "../../components/comments/Comments";
 import CommentDetails from "./CommentDetails";
 
 const CommentDetailsNav = () => {
-    const StackNavigator = createStackNavigator();
+    const StackNavigator = createStackNavigator()
     return (
         <StackNavigator.Navigator>
             <StackNavigator.Screen name={'Comments'} component={Comments}/>

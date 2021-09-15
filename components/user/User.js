@@ -9,7 +9,7 @@ const User = ({item, nav: {navigate}}) => {
     }
     return <View style = {[styles.block]}>
         <Text style = {[styles.text]}>{item.name}</Text>
-        <Button title = {"Details"} onPress = {onPress}/>
+        <Button color = 'purple' title = {"Details"} onPress = {onPress}/>
     </View>;
 };
 export default User;
@@ -24,6 +24,6 @@ let styles = StyleSheet.create({
 
     text: {
         textAlign: 'center',
-        color: 'purple'
+        color: 'blue'
     }
 });
